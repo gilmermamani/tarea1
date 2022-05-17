@@ -1,55 +1,35 @@
-package ECondicional;
+package EstRepetitivas;
 
 import java.util.Scanner;
 
-/**
- * ejercicio37
- */
-public class ejercicio37 {
-    
+public class Ejercicio47 {
     static Scanner lt=new Scanner(System.in);
-    
-    
-public static void main(String[] args ) {
-    //declarar variables
-    int edad;
-    double promedio;
-    String resBeca;
-    //Datos de entrada
-    System.out.println(x:"Ingrese la edad:");
-    edad=lt.nextInt();
-    System.out.println("Ingrese el Promedio:");
-        promedio=lt.nextDouble();
-    //proceso
-    if (edad>18){
-        resBeca="le coresponde el monto de S/ 2000";
-    }else if(promedio>=15){
-        resBeca="le coresponde el monto de S/ 1000";
-    }else if(promedio<15 && promedio>=12){
-        resBeca="le coresponde el monto de S/ 500";
-    } else {
-        if(promedio>=18){
-            resBeca="Le corresponde el monto de S/ 3000";
-        }else if(promedio<18 && promedio>=16){
-            resBeca="Le corresponde el monto de S/ 2000";
-        }else if(promedio<16 && promedio>=12){
-            resBeca="Le corresponde el monto de S/ 100";
-        }else{
-            resBeca="Enviar una carta para que estudie";
-        }
-    }else {
-    if(promedio>=18){
-        resBeca="Le corresponde el monto de S/ 3000";
-    }else if(promedio<18 && promedio>=16){
-        resBeca="Le corresponde el monto de S/ 2000";
-    }else if(promedio<16 && promedio>=12){
-        resBeca="Le corresponde el monto de S/ 100";
-    }else{
-        resBeca="Enviar una carta para que estudie";
+
+    public static void numMayoresCeroMenores47() {
+        //Definir Variables
+        int cantNumMayorcero=0, cantNumMenorIgualCero=0;
+        double numN=0;
+        String continuar="S";
+        //Datos de entrada y proceso
+        while (continuar.equals("S")) {
+            System.out.println("Ingrese un numero:");
+            numN=lt.nextDouble();
+            if (numN<=0) {
+                cantNumMenorIgualCero++;
+            }else{
+                cantNumMayorcero++;
+            }
+            System.out.println("Desea ingresar mas numeros?:\nS=Si\tN=No");
+            continuar=lt.next().toUpperCase().equals("S")?"S":"N";
+        }  
+        //Datos de salida
+        System.out.println("Cantidad de numeros Mayores de cero: "+cantNumMayorcero);
+        System.out.println("Cantidad de numeros menores e iguales a cero: "+cantNumMenorIgualCero);
+        System.out.println("Total de numeros introducidos: "+(cantNumMayorcero+cantNumMenorIgualCero));
+
+    }
+
+    public static void main(String[] args) {
+        numMayoresCeroMenores47();
     }
 }
-//Datos de Salida
-System.out.println(resBeca);
-}
-}
-    
